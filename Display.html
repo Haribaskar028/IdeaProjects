@@ -24,11 +24,13 @@
           <th>First Name</th>
           <th>Middle Name</th>
           <th>Last Name</th>
+          <th>Course</th>
         </tr>
         <tr>
           <td id="firstname"></td>
           <td id="middlename"></td>
           <td id="lastname"></td>
+          <td id="course"></td>
         </tr>
       </table>
 <script>
@@ -37,6 +39,7 @@ function setData(){
         document.getElementById("firstname").innerHTML = localStorage.firstname;
         document.getElementById("middlename").innerHTML = localStorage.middlename;
         document.getElementById("lastname").innerHTML = localStorage.lastname;
+        document.getElementById("course").innerHTML = localStorage.course;
     }
 }
 </script>
