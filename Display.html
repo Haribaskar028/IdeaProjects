@@ -1,15 +1,42 @@
 <html>
-<head>
-<title>Display</title>
-</head>
+    <head>
+        <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+        </head>
 <body onload="setData()">
-<p id="show">
-Name: <!-- want to display the name here -->
-</p>
+    <table>
+        <tr>
+          <th>First Name</th>
+          <th>Middle Name</th>
+          <th>Last Name</th>
+        </tr>
+        <tr>
+          <td id="firstname"></td>
+          <td id="middlename"></td>
+          <td id="lastname"></td>
+        </tr>
+      </table>
 <script>
 function setData(){
     if(typeof(localStorage) != "undefined"){
-        document.getElementById("show").innerHTML = localStorage.firstname;
+        document.getElementById("firstname").innerHTML = localStorage.firstname;
+        document.getElementById("middlename").innerHTML = localStorage.middlename;
+        document.getElementById("lastname").innerHTML = localStorage.lastname;
     }
 }
 </script>
