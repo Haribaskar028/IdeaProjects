@@ -22,24 +22,27 @@
     <table>
         <tr>
           <th>First Name</th>
-          <th>Middle Name</th>
           <th>Last Name</th>
-          <th>Course</th>
+          <th>email</th>
+          <th>city</th>
+          <th>country</th>
         </tr>
         <tr>
           <td id="firstname"></td>
-          <td id="middlename"></td>
           <td id="lastname"></td>
-          <td id="course"></td>
+          <td id="email"></td>
+          <td id="city"></td>
+          <td id="country"></td>
         </tr>
       </table>
 <script>
 function setData(){
     if(typeof(localStorage) != "undefined"){
         document.getElementById("firstname").innerHTML = localStorage.firstname;
-        document.getElementById("middlename").innerHTML = localStorage.middlename;
         document.getElementById("lastname").innerHTML = localStorage.lastname;
-        document.getElementById("course").innerHTML = localStorage.course;
+        document.getElementById("email").innerHTML = localStorage.email;
+        document.getElementById("city").innerHTML = localStorage.city;
+        document.getElementById("country").innerHTML = localStorage.country;
     }
 }
 </script>
