@@ -1,108 +1,79 @@
-<!DOCTYPE html>  
-<html>  
-<head>  
-<meta name="viewport" content="width=device-width, initial-scale=1">  
-<style>  
-body{  
-  font-family: Calibri, Helvetica, sans-serif;  
-  background-color: pink;  
-}  
-.container {  
-    padding: 50px;  
-  background-color: lightblue;  
-}  
-  
-input[type=text], input[type=password], textarea {  
-  width: 100%;  
-  padding: 15px;  
-  margin: 5px 0 22px 0;  
-  display: inline-block;  
-  border: none;  
-  background: #f1f1f1;  
-}  
-input[type=text]:focus, input[type=password]:focus {  
-  background-color: orange;  
-  outline: none;  
-}  
- div {  
-            padding: 10px 0;  
-         }  
-hr {  
-  border: 1px solid #f1f1f1;  
-  margin-bottom: 25px;  
-}  
-.registerbtn {  
-  background-color: #4CAF50;  
-  color: white;  
-  padding: 16px 20px;  
-  margin: 8px 0;  
-  border: none;  
-  cursor: pointer;  
-  width: 100%;  
-  opacity: 0.9;  
-}  
-.registerbtn:hover {  
-  opacity: 1;  
-}  
-</style>  
-</head>  
-<body>  
-<form id="form" method="GET" action="display.html">  
-  <div class="container">  
-  <center>  <h1> Employee Event Registeration Form</h1> </center>  
-  <hr>  
-  <label> Firstname </label>   
-<input type="text" id="firstname" name="firstname" placeholder= "Firstname" size="15" required />   
-<label> Middlename: </label>   
-<input type="text" id="middlename" name="middlename" placeholder="Middlename" size="15" required />   
-<label> Lastname: </label>    
-<input type="text" id="lastname" name="lastname" placeholder="Lastname" size="15"required />   
-<div>  
-<label>   
-Course :  
-</label>   
-  
-<select  id="course">  
-<option value="Team">Team</option>  
-<option value="EPS">EPS</option>  
-<option value="NPS">NPS</option>  
-<option value="BU">BU</option>  
-<option value="BLR-EPS">BLR-EPS</option>  
-<option value="BLR-NPS">BLR-NPS</option>  
-<option value="BLR-BU">BLR-BU</option>  
-</select>  
-</div>  
-<div>  
-<label>   
-Gender :  
-</label><br>  
-<input type="radio" value="Male" name="gender" checked > Male   
-<input type="radio" value="Female" name="gender"> Female   
-<input type="radio" value="Other" name="gender"> Other  
-  
-</div>  
-<label>   
-Phone :  
-</label>  
-<input type="text" name="country code" placeholder="Country Code"  value="+91" size="2"/>   
-<input type="text" name="phone" placeholder="phone no." size="10"/ required>   
-Current Address :  
-<textarea cols="80" rows="5" placeholder="Current Address" value="address" required>  
-</textarea>  
- <label for="email"><b>Email</b></label>  
- <input type="text" placeholder="Enter Email" name="email" required>  
- <input type="button" value="Submit" onclick="submitForm()"> 
-</form> 
-<script>
-  function submitForm(){
-      if(typeof(localStorage) != "undefined"){
-          localStorage.firstname = document.getElementById("firstname").value;
-          localStorage.middlename = document.getElementById("middlename").value;
-          localStorage.Lastname = document.getElementById("lastname").value;
-          localStorage.course = document.getElementById("course").value;
-      }
-      document.getElementById("form").submit();
-  }
-  </script> 
-</body>  
-</html>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registration Form In HTML and CSS</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	
+<div class="wrapper">
+	<div class="registration_form">
+		<div class="title">
+			Registration Form
+		</div>
+
+		<form id="form" method="GET" action="display.html"> 
+			<div class="form_wrap">
+				<div class="input_grp">
+					<div class="input_wrap">
+						<label for="fname">First Name</label>
+						<input id="firstname" type="text" id="fname">
+					</div>
+					<div class="input_wrap">
+						<label for="lname">Last Name</label>
+						<input id="lastname" type="text" id="lname">
+					</div>
+				</div>
+				<div class="input_wrap">
+					<label for="email">Email Address</label>
+					<input id="email" type="text" id="email">
+				</div>
+				<div class="input_wrap">
+					<label>Gender</label>
+					<ul>
+						<li>
+							<label class="radio_wrap">
+								<input type="radio" name="gender" value="male" class="input_radio" checked>
+								<span>Male</span>
+							</label>
+						</li>
+						<li>
+							<label class="radio_wrap">
+								<input type="radio" name="gender" value="female" class="input_radio">
+								<span>Female</span>
+							</label>
+						</li>
+					</ul>
+				</div>
+				<div class="input_wrap">
+					<label for="city">City</label>
+					<input id="city" type="text" id="city">
+				</div>
+				<div class="input_wrap">
+					<label for="country">Country</label>
+					<input id="country" type="text" id="country">
+				</div>
+				<div class="input_wrap">
+					<input type="submit" value="Register Now" class="submit_btn">
+				</div>
+			</div>
+		</form>
+
+		<script>
+			function submitForm(){
+				if(typeof(localStorage) != "undefined"){
+					localStorage.firstname = document.getElementById("firstname").value;
+					localStorage.lastname = document.getElementById("lastname").value;
+					localStorage.email = document.getElementById("email").value;
+					localStorage.city = document.getElementById("city").value;
+					localStorage.country = document.getElementById("country").value;
+				}
+				document.getElementById("form").submit();
+			}
+			</script>
+	</div>
+</div>
+
+</body>
+</html>
